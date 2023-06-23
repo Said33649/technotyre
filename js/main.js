@@ -22,6 +22,8 @@ for (let smoothLink of smoothLinks) {
             behavior: 'smooth',
             block: 'start'
         });
+
+        $target.classList.remove('opened');
     });
 };
 
