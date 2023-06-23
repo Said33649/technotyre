@@ -12,7 +12,7 @@ let swiper = new Swiper('.swiper', {
 
 });
 
-let smoothLinks = document.querySelectorAll('.header__menu-link[href^="#"]');
+let smoothLinks = document.querySelectorAll('.js-menu-link[href^="#"]');
 for (let smoothLink of smoothLinks) {
     smoothLink.addEventListener('click', function (e) {
         e.preventDefault();
