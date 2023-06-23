@@ -135,6 +135,7 @@ progress {
 
 textarea {
   overflow: auto;
+  max-width: 100%;
 }
 
 [type="checkbox"],
