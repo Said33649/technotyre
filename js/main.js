@@ -23,7 +23,7 @@ for (let smoothLink of smoothLinks) {
             block: 'start'
         });
 
-        $target.classList.remove('opened');
+        document.querySelector('.popup-menu').classList.remove('opened');
     });
 };
 
