@@ -964,6 +964,19 @@ a.header__logo {
   }
 }
 
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    background: rgb(255 255 255 / 80%);
+    backdrop-filter: blur(10px);
+}
+
+header.header {
+    padding-top: 149px;
+}
 
 /*adaptive*/
 
