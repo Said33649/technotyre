@@ -521,6 +521,7 @@ a.header__logo {
 
 .contacts__desc {
 	flex: 0 0 520px;
+	max-width: 520px;
 }
 
 .contacts__map-wrap {
@@ -1152,6 +1153,10 @@ header.header {
 
 	.contacts__desc-area {
 		flex-direction: column;
+	}
+
+	.contacts__desc {
+		max-width: 100%;
 	}
 
 }
