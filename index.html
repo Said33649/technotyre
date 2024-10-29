@@ -45,12 +45,22 @@
         }
 
         .toplink-link {
-        color:#fff;
-        font-weight:700;
-        font-size:19px;
-        text-decoration:none;
-        cursor:pointer;
-        vertical-align:top;
+                font-weight:700;
+                font-size:19px;
+                text-decoration:none;
+                cursor:pointer;
+                vertical-align:top;
+                display: block;
+                border-radius: 5px;
+                line-height: 1;
+                padding: 10px 20px;
+                background: #ffcc00;
+                color: #000;
+                transition: 0.2s;
+        }
+
+        span.toplink-link:hover {
+            background: #fff;
         }
 
         .toplink-inner {
@@ -1056,7 +1066,13 @@
         <div class="toplogo"><a href="https://sborniktestov.ru/"><img src="https://sborniktestov.ru/parts/images/logo7.webp" alt="Сборник тестов онлайн" class="toplogo-img"></a></div>
         <div class="topburger"><span></span></div>
         <div class="topsearch"><form action="https://sborniktestov.ru/search.html" method="get"><div class="topsearch-form__inner"><input type="text" name="query" placeholder="Название теста" value="" class="search-field" required="" title="Пожалуйста, заполните это поле"><button type="submit" class="search-button">Найти</button></div></form></div>
-        <div class="toplink"><div class="toplink-inner"><span class="toplink-link" style="cursor: pointer;" onclick="location.href='https://sborniktestov.ru/addtest.html';"><img src="https://sborniktestov.ru/parts/images/cross5.webp" class="toplink-img" alt=""></span></div></div>
+        <div class="toplink">
+                <div class="toplink-inner">
+                        <span class="toplink-link" style="cursor: pointer;" onclick="location.href='https://sborniktestov.ru/addtest.html';">
+                                Добавить свой тест
+                        </span>
+                </div>
+        </div>
     </div>
 </div>
 
