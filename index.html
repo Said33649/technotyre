@@ -1,452 +1,1639 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>TECHNOTYRE</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/main.css">
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
-</head>
+<html lang="ru"><head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Добавить свой тест в СборникТестов</title>
+
+        <meta name="robots" content="index, follow"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="keywords" content="создать тест, добавить тест, сборник тестов, sborniktestov">
+
+        <meta name="description" content="Здесь вы можете создать и добавить свой тест на нашу платформу СборникТестов">
+
+        <meta property="og:title" content="Добавить свой тест">
+
+        <meta property="og:description" content="Здесь вы можете создать и добавить свой тест на нашу платформу СборникТестов">
+
+        <meta property="og:type" content="article"><meta property="og:determiner" content="auto">
+
+        <meta property="og:site_name" content="СборникТестов.ru - Тесты онлайн"><meta property="og:image" content="https://sborniktestov.ru/parts/images/icon5.png">
+
+                    <meta property="og:url" content="https://sborniktestov.ru/addtest.html"><link rel="canonical" href="https://sborniktestov.ru/addtest.html">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://sborniktestov.ru/parts/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://sborniktestov.ru/parts/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://sborniktestov.ru/parts/images/icons/favicon-16x16.png"><link rel="icon" type="image/png" sizes="16x16" href="https://sborniktestov.ru/parts/images/icons/favicon-120x120.png"><link rel="mask-icon" href="https://sborniktestov.ru/parts/images/icons/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#3465CC">
+        <link rel="alternate" href="https://sborniktestov.ru/rss.php" type="application/rss+xml" title="Sborniktestov.ru каталог тестов">
+        <style>
+        .row-menu {
+        padding:10px 0;
+        background:#36c;
+        }
+
+        .header-content {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        }
+
+        .toplogo-img {
+            width:230px;
+            height: auto;
+        }
+
+        .toplink-img {
+            width: 120px;
+            height: auto;
+            margin: -4px 5px 0 0;
+        }
+
+        .toplink-link {
+        color:#fff;
+        font-weight:700;
+        font-size:19px;
+        text-decoration:none;
+        cursor:pointer;
+        vertical-align:top;
+        }
+
+        .toplink-inner {
+        margin:7px 0 0 5px;
+        white-space:nowrap;
+        }
+
+        body {
+        display:flex;
+        flex-direction:column;
+        margin:0;
+        font-family:sans-serif;
+        overflow-y:scroll;
+        min-height:100vh;
+        }
+
+        body>.container { flex:1 1 auto; }
+
+        a { color:navy; }
+
+        .topsearch-form__inner {
+        background-color:#fc0;
+        border-radius:10px 5px 5px 10px;
+        display:flex;
+        align-items:flex-end;
+        position:relative;
+        }
+
+        .site-prop {
+        display:block;
+        margin-left:5px;
+        margin-top:15px;
+        line-height:23px;
+        }
+
+        .site-prop a,
+        .site-prop span { font-size:14px; }
+
+        .title-h2-wr { width:100%; }
+
+        .reviews-count { text-align:center; }
+
+        .new-reviews .sublock { line-height:25px; }
+
+        .new-reviews .sublock .elmain { min-height:179px; }
+
+        .new-reviews .elmain a {
+        font-size:21px;
+        text-decoration:none;
+        }
+
+        .new-reviews .elmain span {
+        font-size:14px;
+        }
+
+        .prod-cats .mainblock a {
+        display:block;
+        font-size:25px;
+        text-decoration:none;
+        }
+
+        .prod-cats .mainblock img {
+        width:79px;
+        height:15px;
+        margin-bottom:-1px;
+        }
+
+        .main_cats source, .main_cats img {
+            width:90px;
+            height:90px;
+            object-fit: cover;
+        }
+
+        .main_cats-more {
+            color:#3757c5;
+            width:100%;
+        }
+
+        .new-reviews .elmain a.elmain-more {
+            font-size:16px;
+            text-decoration:underline;
+        }
+
+        .popular-pords .elmain a {
+            display:block;
+            font-size:23px;
+            text-decoration:none;
+        }
+
+        .popular-pords .elmain img {
+            width:79px;
+            height:15px;
+            margin-bottom:-1px;
+        }
+
+        .popular-pords .elpic img {
+            width:90px;
+            height:90px;
+            object-fit: cover;
+        }
+
+        .footer {
+            bottom:0;
+            padding:30px 0;
+            background:#36c;
+        }
+
+        .footer .container { color:#fff; }
+
+        .footer-left {
+            width:67%;
+            margin-left:9px;
+            font-size:15px;
+            float:left;
+            line-height:19px;
+        }
+
+        .footer-right {
+            width:30%;
+            float:right;
+        }
+
+        .children_cats .mainblock a {
+            display:block;
+            font-size:25px;
+            text-decoration:none;
+        }
+
+        .children_cats .mainblock img {
+            width:79px;
+            height:15px;
+            margin-bottom:-1px;
+        }
+
+        .products_list .elmain a {
+            display:block;
+            font-size:23px;
+            text-decoration:none;
+        }
+
+        .products_list .elmain img {
+            width:79px;
+            height:15px;
+            margin-bottom:-1px;
+        }
+
+        .pagination-block {
+            text-align:center;
+            width:100%;
+            margin-top:34px;
+        }
+
+        .pagination-block a { font-size:19px; }
+
+        .pagination-block .pages-text {
+            font-size:19px;
+            color:#000;
+        }
+
+        .pagination_first-page-link { font-size:19px; }
+
+        .pagination_first-page {
+            font-weight:700;
+            font-size:19px;
+        }
+
+        .pagination_num { font-size:19px; }
+
+        .current_page {
+            font-size:17px;
+            color:#000;
+        }
+
+        .each-opinion {
+            margin:0 15px 0 9px;
+            line-height:23px;
+        }
+
+        .each-opinion .elementmain img {
+            width:103px;
+            height:20px;
+            margin-bottom:-4px;
+        }
+
+        .each-opinion .elementpic img,
+        .each-opinion .elementpic source {
+            width:90px;
+            height:90px;
+            object-fit: cover;
+        }
+
+        .reviews-gb-rate {
+            line-height:27px;
+            order:1;
+        }
+
+        .reviews-gb-rate+hr { order:2; }
+
+        .reviews-gb-rate span {
+            font-size:17px;
+            color:#000;
+        }
+
+        .reviews-gb-rate a { color:#3757c5; }
+
+        .opinionright span { font-weight:700; }
+
+        .opinionright i { cursor:pointer; }
+
+        .opinionright i img { margin-bottom:-4px; }
+
+        .horizontal-media-scroller li {
+            padding-right:15px;
+            padding-bottom:15px;
+        }
+
+        .main_cats {
+            overflow:hidden;
+            margin:0 0 64px;
+            display:flex;
+            flex-wrap:wrap;
+        }
+
+        .main_cats .sublock {
+            word-break:break-word;
+            display:flex;
+            flex-direction:row-reverse;
+        }
+
+        .main_cats .sublock a {
+            line-height:24px;
+            color:#3757c5;
+        }
+
+        .main_cats .sublock a:last-child {
+            font-size:16px;
+            text-decoration:underline;
+        }
+
+        .main_cats .sublock p { margin:9px 0 0; }
+
+        .main_cats .sublock a:hover { color:#2a1051; }
+
+        .main_cats .mainblock {
+            word-break:break-word;
+            line-height:20px;
+        }
+
+        .main_cats .mainblock a {
+            font-size:24px;
+            line-height:24px;
+            color:#3757c5;
+        }
+
+        .main_cats .mainblock p { margin:9px 0 0; }
+
+        .main_cats .mainblock a:hover { color:#2a1051; }
+
+        .title-h2 {
+            display:block;
+            font-size:30px;
+            line-height:1;
+            text-align:center;
+            padding:31px 0 22px;
+            margin:0 0 50px;
+            color:#000;
+        }
+
+        .title-h2 a { color:#000; }
+
+        .avborder { position:relative; }
+
+        .avborder:before {
+            content:"";
+            position:absolute;
+            left:50%;
+            bottom:0;
+            width:100%;
+            max-width:360px;
+            border-bottom:3px solid #fc0;
+            -webkit-transform:translateX(-50%) translateY(0);
+            -moz-transform:translateX(-50%) translateY(0);
+            -ms-transform:translateX(-50%) translateY(0);
+            transform:translateX(-50%) translateY(0);
+        }
+
+        .topburger {
+            width:40px;
+            height:44px;
+            position:relative;
+            background:#fc0;
+            cursor:pointer;
+            border-radius:5px;
+            flex:0 0 80px;
+        }
+
+        .topburger:before {
+            content:"";
+            display:block;
+            height:2px;
+            background:#000;
+            position:absolute;
+            top:50%;
+            margin-top:-8px;
+            width:30px;
+            left:50%;
+            transform:translateX(-50%);
+        }
+
+        .topburger:after {
+            content:"";
+            display:block;
+            height:2px;
+            background:#000;
+            position:absolute;
+            top:50%;
+            margin-top:6px;
+            width:30px;
+            left:50%;
+            transform:translateX(-50%);
+        }
+
+        .topburger span {
+            display:block;
+            height:2px;
+            background:#000;
+            position:absolute;
+            top:50%;
+            margin-top:-1px;
+            width:30px;
+            left:50%;
+            transform:translateX(-50%);
+        }
+
+        .popup-menu {
+            position:absolute;
+            top:83px;
+            right:0;
+            bottom:0;
+            left:0;
+            z-index:9;
+            display:none;
+        }
+
+        .popup-menu__inner {
+            width:100%;
+            margin-left:auto;
+            background:#fff;
+            padding:60px 40px 20px;
+            box-sizing:border-box;
+            position:relative;
+            overflow:auto;
+            max-height:100%;
+        }
+
+        .popup-menu__nav-wrap {
+            width:1160px;
+            margin:0 auto;
+            max-width:100%;
+        }
+
+        ul.popup-menu__nav {
+            padding:0;
+            margin:0;
+            list-style:none;
+            display:flex;
+            flex-wrap:wrap;
+        }
+
+        .popup-menu__bg {
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background:rgb(0 0 0/25%);
+        }
+
+        ul.popup-menu__nav li {
+            margin-bottom:10px;
+            display:inline-block;
+            flex:1 1 50%;
+            border-bottom:1px solid #ececec;
+            padding-bottom:5px;
+            line-height:50px;
+        }
+
+        ul.popup-menu__nav li a {
+            text-decoration:none;
+            color:#3757c5;
+            font-size:21px;
+            display:inline-block;
+            transition:.3s;
+        }
+
+        ul.popup-menu__nav li a:hover { color:#2a0f51; }
+
+        .popup-menu__close {
+            position:absolute;
+            top:10px;
+            right:10px;
+            width:40px;
+            height:40px;
+            cursor:pointer;
+        }
+
+        .popup-menu__close:before {
+            content:"";
+            width:30px;
+            height:2px;
+            background:#000;
+            display:block;
+            transform:rotate(45deg);
+            position:absolute;
+            top:18px;
+            left:4px;
+        }
+
+        .popup-menu__close:after {
+            content:"";
+            width:30px;
+            height:2px;
+            background:#000;
+            display:block;
+            transform:rotate(-45deg);
+            position:absolute;
+            top:18px;
+            left:4px;
+        }
+
+        .popup-menu.opened { display:block; }
+
+        .topsearch { flex:0 1 573px; }
+
+        .main_cats .sublock {
+            flex:0 1 calc(50% - 20px);
+            justify-content:flex-end;
+            margin:0 10px 20px;
+        }
+
+        .reviews-opinion-wr {
+            display:flex;
+            flex-direction:column;
+        }
+
+        .each-opinion .element-wrap { display:flex; }
+
+        .elementpic { flex:0 0 11%; }
+
+        .elementmain { flex:1 1 89%; }
+
+        .opinion-wrap {
+            order:3;
+            display:flex;
+        }
+
+        .sendopi {
+            border:1px solid #fc0;
+            background:#fc0;
+            color:#000;
+            fill:#000;
+            font-size:1.125rem;
+            height:calc(2.75rem + 2px);
+            padding:.8125rem 2rem;
+            line-height:1;
+            font-weight:500;
+            border-radius:4px;
+            transition:all .1s ease-in-out;
+            width:100%;
+            cursor:pointer;
+        }
+
+        .opinionright {
+            flex:0 0 25%;
+            margin-left:20px;
+            padding-top: 44px;
+        }
+
+        .opinionleft { flex:1 1 auto; }
+
+
+        .elmain .toprating-stars {
+        width:79px;
+        height:15px;
+        margin-bottom:-1px;
+        }
+
+        @media (max-width:430px) {
+            .container {
+                margin:0 auto;
+                padding:0 15px;
+            }
+
+            .main_cats .mainblock {
+                border-bottom:1px solid #ececec;
+                padding:10px 0 10px 9px;
+                margin:5px 20px 10px 0;
+                float:left;
+                width:100%;
+            }
+
+            .main_cats .sublock {
+                border-bottom:1px solid #ececec;
+                padding:10px 0 5px 9px;
+                margin:10px 20px 5px 0;
+                float:left;
+                width:100%;
+            }
+
+            .search-field {
+                border-radius:10px 5px 5px 10px;
+                border:2px solid #fc0;
+                padding:13px;
+                font-size:17px;
+                width:100%;
+            }
+
+            .search-button {
+                display:inline-block;
+                text-align:center;
+                padding:10px 15px 14px;
+                border-radius:5px;
+                background-color:#fc0;
+                border:none;
+                font-weight:700;
+                color:#000;
+                cursor:pointer;
+                font-size:17px;
+            }
+
+            .topsearch-form__inner {
+                margin-top:0;
+                width:100%;
+                margin-left:0;
+            }
+
+            .toplogo { display:none; }
+
+            div.topburger { height:50px; }
+
+            .toplink { display:none; }
+
+            .elmain { width:100%; }
+
+            .elpic { display:none; }
+
+            .elementmain { width:100%; }
+
+            .elementpic { display:none; }
+        }
+
+        @media (min-width:431px) and (max-width:640px) {
+            .container {
+                margin:0 auto;
+                padding:0 15px;
+            }
+
+            .main_cats .mainblock {
+                border-bottom:1px solid #ececec;
+                padding:10px 0 10px 9px;
+                margin:5px 20px 10px 0;
+                float:left;
+                width:100%;
+            }
+
+            .main_cats .sublock {
+                border-bottom:1px solid #ececec;
+                padding:10px 0 5px 9px;
+                margin:10px 20px 5px 0;
+                float:left;
+                width:100%;
+            }
+
+            .search-field {
+                border-radius:10px 5px 5px 10px;
+                border:2px solid #fc0;
+                padding:13px;
+                font-size:17px;
+                width:100%;
+            }
+
+            .search-button {
+                display:inline-block;
+                text-align:center;
+                padding:10px 15px 14px;
+                border-radius:5px;
+                background-color:#fc0;
+                border:none;
+                font-weight:700;
+                color:#000;
+                cursor:pointer;
+                font-size:17px;
+            }
+
+            .topsearch-form__inner {
+                margin-top:0;
+                width:100%;
+                margin-left:0;
+            }
+
+            .toplogo { display:none; }
+
+            div.topburger {
+                top:0;
+                height:50px;
+                margin-right:14px;
+            }
+
+            .toplink { display:none; }
+
+            .elmain { width:100%; }
+
+            .elpic { display:none; }
+
+            .elementmain { width:100%; }
+
+            .elementpic { display:none; }
+        }
+
+        @media (min-width:641px) and (max-width:767px) {
+            .container {
+                margin:0 auto;
+                padding:0 15px;
+            }
+
+            .main_cats .mainblock {
+                border-bottom:1px solid #ececec;
+                padding:10px 0 10px 9px;
+                margin:5px 20px 10px 0;
+                float:left;
+                width:100%;
+            }
+
+            .main_cats .sublock {
+                border-bottom:1px solid #ececec;
+                margin:10px 20px 5px 0;
+            }
+
+            .search-field {
+                border-radius:10px 5px 5px 10px;
+                border:2px solid #fc0;
+                padding:13px;
+                font-size:17px;
+                width:100%;
+            }
+
+            .search-button {
+                display:inline-block;
+                text-align:center;
+                padding:10px 15px 14px;
+                border-radius:5px;
+                background-color:#fc0;
+                border:none;
+                font-weight:700;
+                color:#000;
+                cursor:pointer;
+                font-size:17px;
+            }
+
+            .toplogo { display:none; }
+
+            .topsearch {
+                width:calc(81% - 55px);
+                float:left;
+            }
+
+            .toplink {
+                width:19%;
+                float:left;
+                padding-top:15px;
+            }
+
+            .elmain { width:100%; }
+
+            .elpic { display:none; }
+
+            .elementmain { width:100%; }
+
+            .elementpic { display:none; }
+        }
+
+        @media (min-width:768px) and (max-width:991px) {
+        .container {
+            margin:0 auto;
+            padding:0 15px;
+        }
+
+        .main_cats .mainblock {
+            border-bottom:1px solid #ececec;
+            padding:10px 0 10px 9px;
+            margin:5px 20px 10px 0;
+            float:left;
+            width:45%;
+        }
+
+        .search-field {
+            border-radius:10px 5px 5px 10px;
+            border:2px solid #fc0;
+            padding:13px;
+            font-size:17px;
+            width:100%;
+        }
+
+        .search-button {
+            display:inline-block;
+            text-align:center;
+            padding:10px 15px 14px;
+            border-radius:5px;
+            background-color:#fc0;
+            border:none;
+            font-weight:700;
+            color:#000;
+            cursor:pointer;
+            font-size:17px;
+        }
+
+        .topsearch-form__inner {
+            margin-top:7px;
+            margin-bottom:7px;
+            width:calc(80% + 45px);
+            margin-left:0;
+        }
+
+        .toplink {
+            width:19%;
+            float:left;
+            padding-top:15px;
+        }
+
+        .elmain {
+            width:85%;
+            float:left;
+        }
+
+        .elpic { display:none; }
+
+        .elementpic { display:none; }
+        }
+
+        @media (min-width:992px) and (max-width:1199px) {
+        .container {
+            margin:0 auto;
+            padding:0 15px;
+        }
+
+        .main_cats .mainblock {
+            border-bottom:1px solid #ececec;
+            padding:10px 0 10px 9px;
+            margin:5px 20px 10px 0;
+            float:left;
+            width:47%;
+        }
+
+        .main_cats .sublock { border-bottom:1px solid #ececec; }
+
+        .search-field {
+            border-radius:10px 5px 5px 10px;
+            border:2px solid #fc0;
+            padding:13px;
+            font-size:17px;
+            width:100%;
+        }
+
+        .search-button {
+            display:inline-block;
+            text-align:center;
+            padding:10px 15px 14px;
+            border-radius:5px;
+            background-color:#fc0;
+            border:none;
+            font-weight:700;
+            color:#000;
+            cursor:pointer;
+            font-size:17px;
+        }
+
+        div.topburger { height:50px; }
+
+        .toplogo { width:23%; }
+
+        .elmain {
+            width:80%;
+            float:left;
+        }
+
+        .elpic { width:20%; }
+
+        .firstlink { display:none; }
+        }
+
+        @media (min-width:1200px) {
+        .container {
+            width:1200px;
+            margin:0 auto;
+            padding:0 20px;
+            max-width:calc(100% - 40px);
+        }
+
+        .main_cats .mainblock {
+            border-bottom:1px solid #ececec;
+            padding:10px 0 10px 9px;
+            margin:5px 20px 10px 0;
+            width:30%;
+            min-height:88px;
+        }
+
+        .main_cats .sublock {
+            border-bottom:1px solid #ececec;
+            min-height:93px;
+        }
+
+        .search-field {
+            border-radius:10px 5px 5px 10px;
+            border:2px solid #fc0;
+            padding:10px 0 10px 13px;
+            margin:0;
+            font-size:17px;
+            width:100%;
+        }
+
+        .search-button {
+            display:inline-block;
+            text-align:center;
+            padding:10px 15px 13px;
+            border-radius:5px;
+            background-color:#fc0;
+            border:none;
+            font-weight:700;
+            color:#000;
+            cursor:pointer;
+            font-size:17px;
+        }
+
+        .toplink {
+            width:15%;
+            flex:0 0 15%;
+            display:flex;
+        }
+
+        .elmain { width:78%; }
+
+        .elpic { width:22%; }
+
+        .elementmain { width:89%; }
+
+        .elementpic { width:11%; }
+
+        .firstlink { display:none; }
+        }
+
+        @media all and (max-width:1200px) {
+        .toplink {
+            display:flex;
+            padding-right:25px;
+            align-items:center;
+        }
+
+        .topsearch { padding:0 15px; }
+        }
+
+        @media screen and (max-width:1160px) {
+        body.noscroll { padding:0; }
+        }
+
+        @media (max-width:990px) {
+            .opinionright {
+                margin-left:0;
+                width:auto;
+            }
+
+            body .opinionleft { width:100%; }
+
+            body>div>.container {
+                display:flex;
+                flex-wrap:wrap;
+            }
+
+            .toplink {
+                order:2;
+                margin-bottom:25px;
+                text-align:center;
+                display:flex;
+                justify-content:flex-end;
+                flex:1 1 calc(50% - 25px);
+                align-self:center;
+                margin-left:auto;
+                height:60px;
+                align-items:center;
+                padding:0;
+            }
+
+            div.topburger {
+                order:3;
+                flex:0 0 40px;
+                margin-right:20px;
+                height:50px;
+            }
+
+            .topsearch {
+                order:4;
+                flex:1 1 auto;
+                padding:0;
+            }
+
+            .toplogo {
+                order:1;
+                width:190px;
+                height:60px;
+                flex:0 0 50%;
+                margin-bottom:15px;
+                display:block;
+                align-self:center;
+            }
+
+            .toplogo img {
+                width: 190px;
+                height: auto;
+            }
+
+            .topsearch-form__inner { width:100%; }
+
+            .popup-menu { top:184px; }
+
+            .opinion-wrap { flex-direction:column; }
+        }
+
+        @media screen and (max-width:767px) {
+        .topsearch-form__inner { width:100%; }
+
+        .main_cats .sublock {
+            width:100%;
+            flex:1 1 100%;
+        }
+        }
+
+        @media screen and (max-width:640px) {
+        button.sendopi.open-review-add { width:100%; }
+
+        .popup-menu { top:155px; }
+        }
+
+        @media screen and (max-width:550px) {
+        ul.popup-menu__nav li { flex:1 1 100%; }
+
+        .topsearch { flex:1 1 calc(100% - 60px); }
+        }
+
+        @media screen and (max-width:380px) {
+            .toplogo {
+                height: 47px;
+            }
+
+            .toplogo img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .toplink { height:47px; }
+        }
+
+        .revbox:hover { box-shadow:rgba(0,0,0,.09) 0px 3px 12px; }
+
+        body.compensate-for-scrollbar { overflow:hidden; }
+
+        .sendopi {
+            border:1px solid #fc0;
+            background:#fc0;
+            color:#000;
+            fill:#000;
+            font-size:1.125rem;
+            height:calc(2.75rem + 2px);
+            padding:.8125rem 2rem;
+            line-height:1;
+            font-weight:500;
+            border-radius:4px;
+            transition:all .1s ease-in-out;
+            width:100%;
+            cursor:pointer;
+        }
+
+        .opinionleft {
+            float:left;
+            width:73%;
+        }
+
+        @media all and (max-width:768px) {
+            .opinionleft {
+                float:left;
+                width:100%;
+            }
+
+            .opinionright {
+                float:right;
+                width:100%;
+            }
+        }
+        
+        </style>
+    <script src="chrome-extension://ojaffphbffmdaicdkahnmihipclmepok/static/js/workers.min.js"></script></head>
 <body>
+<div class="row-menu">
+    <div class="container header-content">
+        <div class="toplogo"><a href="https://sborniktestov.ru/"><img src="https://sborniktestov.ru/parts/images/logo7.webp" alt="Сборник тестов онлайн" class="toplogo-img"></a></div>
+        <div class="topburger"><span></span></div>
+        <div class="topsearch"><form action="https://sborniktestov.ru/search.html" method="get"><div class="topsearch-form__inner"><input type="text" name="query" placeholder="Название теста" value="" class="search-field" required="" title="Пожалуйста, заполните это поле"><button type="submit" class="search-button">Найти</button></div></form></div>
+        <div class="toplink"><div class="toplink-inner"><span class="toplink-link" style="cursor: pointer;" onclick="location.href='https://sborniktestov.ru/addtest.html';"><img src="https://sborniktestov.ru/parts/images/cross5.webp" class="toplink-img" alt=""></span></div></div>
+    </div>
+</div>
 
-	<header class="header">
-		<div class="header-top">
-			<div class="container">
-				<div class="header-top__inner">
-					<a href="#" class="header__logo">
-						<img src="img/logo.svg" alt="логотип">
-					</a>
-					<nav class="header__nav">
-						<ul class="header__menu">
-							<li class="header__menu-item">
-								<a href="#product" class="header__menu-link js-menu-link">
-									<span class="header__menu-text">Шины</span>
-								</a>
-							</li>
-							<li class="header__menu-item">
-								<a href="#factory" class="header__menu-link js-menu-link">
-									<span class="header__menu-text">Заводы</span>
-								</a>
-							</li>
-							<li class="header__menu-item">
-								<a href="#factory" class="header__menu-link js-menu-link">
-									<span class="header__menu-text">Преимущества</span>
-								</a>
-							</li>
-							<li class="header__menu-item">
-								<a href="#about-us" class="header__menu-link js-menu-link">
-									<span class="header__menu-text">О нас</span>
-								</a>
-							</li>
-							<li class="header__menu-item">
-								<a href="#partners" class="header__menu-link js-menu-link">
-									<span class="header__menu-text">Партнёры</span>
-								</a>
-							</li>
-							<li class="header__menu-item">
-								<a href="#contacts" class="header__menu-link js-menu-link">
-									<span class="header__menu-text">Контакты</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<ul class="header__lang-bar">
-						<li class="header__lang-item">
-							<a href="" class="header__lang-link">
-								<img src="img/header-lang-ru.svg" alt="">
-							</a>
-						</li>
-						<li class="header__lang-item">
-							<a href="" class="header__lang-link">
-								<img src="img/header-lang-uz.svg" alt="">
-							</a>
-						</li>
-					</ul>
-					<div class="header__contacts">
-						<div class="header__contacts-local">
-							<div class="header__local-icon">
-								<img src="img/header-local.svg" alt="">
-							</div>
-							<div class="header__local-text">г. Ташкент, Чиланзар 7 квартал, 23 дом</div>
-						</div>
-						<a href="tel:+998908270505" class="header__contacts-phone">
-							<div class="header__phone-icon">
-								<img src="img/header-phone.svg" alt="">
-							</div>
-							<div class="header__phone-text">+998 90 827-05-05</div>
-						</a>
-					</div>
-					<div class="burger popup-menu-btn">
-						<span></span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="header-main swiper">
-			<div class="header__slider swiper-wrapper">
-				<div class="header__slider-item swiper-slide">
-					<div class="header__slider-item-in">
-						<div class="header__slider-img">
-							<img src="img/slide-1-1.jpg" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="header__slider-item swiper-slide">
-					<div class="header__slider-item-in">
-						<div class="header__slider-img">
-							<img src="img/header-slide1.jpg" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="header__slider-item swiper-slide">
-					<div class="header__slider-item-in">
-						<div class="header__slider-img">
-							<img src="img/slider-3-img.jpg" alt="">
-						</div>
-					</div>
-				</div>				
-			</div>
-			<div class="swiper-pagination"></div>
-		</div>
-	</header>
+<div class="container"><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="/css/quiz_add.css">
+<script src="https://sborniktestov.ru/parts/js/quiz_add.js"></script>
 
-	<section class="product" id="product">
-		<div class="container">
-			<div class="product__inner">
-				<div class="product__title">Наши шины</div>
-				<div class="product__items-wrap">
-					<div class="product-item">
-						<div class="product-item__title">Грузовые автошины</div>
-						<div class="product-item__img">
-							<img src="img/product-img1.png" alt="">
-						</div>
-						<div class="product-item__desc">
-							Шины, предназначенные для установки на грузовые автомобили и другие транспортные средства, используемые для перевозки грузов. Они обычно имеют больший диаметр, более широкий профиль и более высокую нагрузочную способность, чем шины для легковых автомобилей.<br><br>
-							Грузовые автошины могут быть использованы на различных типах дорог и в различных условиях эксплуатации, включая городские улицы, шоссе и бездорожье.
-						</div>
-						<div class="product-item__btn-wrap">
-							<button class="product-item__btn main-btn popup-btn">Оставить заявку</button>
-						</div>
-					</div>
-					<div class="product-item">
-						<div class="product-item__title">Шины для спецтехники</div>
-						<div class="product-item__img">
-							<img src="img/product-img2.png" alt="">
-						</div>
-						<div class="product-item__desc">
-							Шины, предназначенные для установки на специальную технику, такую как экскаваторы, бульдозеры, грейдеры и другие. Они имеют особую конструкцию, которая позволяет им выдерживать большие нагрузки и работать в тяжелых условиях.<br><br>
-							Шины для спецтехники могут быть различных типов в зависимости от типа техники и условий эксплуатации. Они могут быть пневматическими или безкамерными, иметь широкие или узкие протекторы.
-						</div>
-						<div class="product-item__btn-wrap">
-							<button class="product-item__btn main-btn popup-btn">Оставить заявку</button>
-						</div>
-					</div>
-					<div class="product-item">
-						<div class="product-item__title">Карьерные автошины</div>
-						<div class="product-item__img">
-							<img src="img/product-img3.png" alt="">
-						</div>
-						<div class="product-item__desc">
-							Специальный тип шин для использования на крупногабаритной технике, работающей в карьерах и на строительных площадках. Они имеют более крупный размер и более глубокий протектор для обеспечения хорошей проходимости на неровных поверхностях и устойчивости на грунте.<br><br>
-							Карьерные шины также могут иметь усиленную конструкцию для выдерживания больших нагрузок и износостойкости в условиях экстремальных нагрузок.
-						</div>
-						<div class="product-item__btn-wrap">
-							<button class="product-item__btn main-btn popup-btn">Оставить заявку</button>
-						</div>
-					</div>
-					<div class="product-item">
-						<div class="product-item__title">Шины для складской техники</div>
-						<div class="product-item__img">
-							<img src="img/product-img4.png" alt="">
-						</div>
-						<div class="product-item__desc">
-							Специальный тип шин, предназначенный для использования на погрузчиках, штабелере и другой складской технике. Они обеспечивают хорошее сцепление с полом, минимальное повреждение поверхности и устойчивость при подъеме и перемещении грузов.<br><br>
-							Шины для складской техники могут иметь различные размеры и типы протектора в зависимости от конкретных условий эксплуатации.
-						</div>
-						<div class="product-item__btn-wrap">
-							<button class="product-item__btn main-btn popup-btn">Оставить заявку</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<span class="site-prop" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+    <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+        <a href="https://sborniktestov.ru/" itemprop="item">
+            <span itemprop="name">Каталог тестов</span>
+        </a>
+        <meta itemprop="position" content="1">
+    </span> -
+    <span>
+        <span itemprop="name">Создавайте и делитесь своими тестами с другими пользователями!</span>
+    </span>
+</span>
 
-	<section class="factory" id="factory">
-		<div class="container">
-			<div class="factory__inner">
-				<div class="factory__title">Заводы с которыми мы работаем</div>
-				<div class="factory__items-wrap">
-					<div class="factory-item">
-						<div class="factory-item__img">
-							<img src="img/factory-img1.svg" alt="Завод1">
-						</div>
-						<div class="factory-item__desc">
-							Компания TECHNOTYRE – Занимается реализацией Автошин для специальной Карьерной техники, в том числе грузовых машин. Автошины марки KUNLUN, NEW POWER, LUAO – являются эталоном качества в данном сегменте. Так же не мало важно завод принадлежит холдингу Double Coin – что в свою очередь говорит о мировом качестве бренда.
-						</div>
-					</div>
-					<div class="factory-item">
-						<div class="factory-item__img">
-							<img src="img/factory-img2.svg" alt="Завод1">
-						</div>
-						<div class="factory-item__desc">
-							Данный завод –дилером которого является наша компания, выпускает большой ряд премиальных автошин для сидельных тягачей и прицепов, что в свою очередь зарекомендовали себя, как шины высокого качества от мирового производителя DUNLOP.
-						</div>
-					</div>
-					<div class="factory-item">
-						<div class="factory-item__img">
-							<img src="img/factory-img3.svg" alt="Завод1">
-						</div>
-						<div class="factory-item__desc">
-							Завод под эгидой большого холдинга Double Coin , быть партнерами с данным заводом нам позволило реализовать автошины для специального техники на территории СНГ, хорошего качества, с выгодной ценой и гарантией.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<div class="title-h2-wr">
+    <h1 class="title-h2 avborder">Добавить свой тест</h1>
+</div>
 
-	<section class="plus" id="plus">
-		<div class="container">
-			<div class="plus__inner">
-				<div class="plus__title">Преимущества</div>
-				<div class="plus__items-wrap">
-					<div class="plus-item">
-						<div class="plus-item__icon">
-							<img src="img/plus-icon1.svg" alt="">
-						</div>
-						<div class="plus-item__text">Мы официальные дистрибьюторы заводов</div>
-					</div>
-					<div class="plus-item">
-						<div class="plus-item__icon">
-							<img src="img/plus-icon2.svg" alt="">
-						</div>
-						<div class="plus-item__text">Мы работаем более 18 лет на рынке Узбекистана</div>
-					</div>
-					<div class="plus-item">
-						<div class="plus-item__icon">
-							<img src="img/plus-icon3.svg" alt="">
-						</div>
-						<div class="plus-item__text">Прямые поставки с завода изготовителя в кратчайшие сроки</div>
-					</div>
-					<div class="plus-item">
-						<div class="plus-item__icon">
-							<img src="img/plus-icon4.svg" alt="">
-						</div>
-						<div class="plus-item__text">100% гарантия качества</div>
-					</div>
-					<div class="plus-item">
-						<div class="plus-item__icon">
-							<img src="img/plus-icon5.svg" alt="">
-						</div>
-						<div class="plus-item__text">Широкий ассортимент шин для любой техники</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<div class="section-test">
+    <form id="quiz-form" method="post" action="/quiz/processing">
+        <input type="hidden" name="action" value="add_quiz">
+        <input type="hidden" name="token" value="76cf751a8354725d6b274675c603d10b38ebff5c52621acf5f416fe8537f6779">
 
-	<section class="about-us" id="about-us">
-		<div class="container">
-			<div class="about-us__inner">
-				<div class="about-us__title">О компании</div>
-				<div class="about-us__desc-area">
-					<div class="about-us__desc">
-						Группа компаний работает на рынке СНГ более 15лет.<br><br>
+                <div class="form-group">
+            <label>Категория теста <span class="required">*</span></label>
+            <select name="category_id" class="form-control" required="">
+                <option value="">Выберите категорию</option>
+                                    <option value="102">История и культура</option>
+                                    <option value="3">Кулинарные викторины</option>
+                                    <option value="101">Логические головоломки</option>
+                                    <option value="105">Музыка и кино</option>
+                                    <option value="2">На iQ и интеллект</option>
+                                    <option value="1">На внимание, концентрацию</option>
+                                    <option value="103">Научные факты</option>
+                                    <option value="100">Общие знания</option>
+                                    <option value="107">Природа и окружающая среда</option>
+                                    <option value="5">Разноплановые тесты</option>
+                                    <option value="106">Спортивные тесты</option>
+                                    <option value="108">Тесты по Географии</option>
+                                    <option value="6">Тесты по ПДД</option>
+                                    <option value="4">Тесты по психологии</option>
+                                    <option value="104">Технологии и IT</option>
+                            </select>
+        </div>
 
-						За период работы было реализовано более 100 ключевых проектов в дистрибьюции автошин, а так же в логистике и поставки товаров под ключ.<br><br>
+                <div class="form-group">
+            <label>Тип теста <span class="required">*</span></label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="test_type" value="simple" checked="">
+                    Простой тест
+                    <div class="hint">Вопросы показываются поочередно, один или несколько правильных ответов</div>
+                </label>
+                <label>
+                    <input type="radio" name="test_type" value="blitz">
+                    Блиц тест
+                    <div class="hint">Вопросы выведены столбиком, при выборе ответа сразу отмечается правильный</div>
+                </label>
+                <label>
+                    <input type="radio" name="test_type" value="personality">
+                    Тест личности
+                    <div class="hint">Варианты ответов сопоставляются с подготовленными типами личности</div>
+                </label>
+            </div>
+        </div>
 
-						Компания по поставке автошин является официальным дистрибьютором на рынке Казахстана и Узбекистана, таких заводов как Double coin ( Xinjiang) Group Tyre, Chaoyang Long March Tyre.<br><br>
+                <div class="form-group">
+            <label>Название теста <span class="required">*</span></label>
+            <input type="text" name="title" maxlength="400" class="form-control" required="">
+            <div class="hint">Чем завлекательнее название, тем больше просмотров получит тест</div>
+        </div>
 
-						Компания осуществляющая проектные логистические услуги ведет крупные проекты по поставки специализированной техники марки HITACHI, электрических автомобилей для различных дилеров на территории СНГ.
+        <div class="form-group">
+            <label>Описание теста <span class="required">*</span></label>
+            <textarea name="description" class="form-control" required=""></textarea>
+            <div class="hint">Кратко опишите о чем ваш тест</div>
+        </div>
 
-					</div>
-					<div class="about-us__img">
-						<img src="img/about-us-img.jpg" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                <div class="form-group">
+            <label>Заглавная картинка <span class="required">*</span></label>
+            <div class="image-upload" data-type="cover">
+                <div class="upload-zone">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="30px" height="30px" viewBox="0 0 32 32" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#3366cc"><path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"></path></g></g></svg> Перетащите изображение сюда или кликните для выбора</span>
+                </div>
+                <div class="preview"></div>
+                <input type="file" accept="image/*" class="file-input hidden">
+                <input type="hidden" name="cover_image" class="image-input">
+            </div>
+        </div>
 
-	<section class="partners" id="partners">
-		<div class="container">
-			<div class="partners__inner">
-				<div class="partners__title">Наши клиенты</div>
-				<div class="partners__items-wrap">					
-					<a href="#" class="partners-item" target="_blank">
-						<img src="img/partner-img1.png" alt="">
-					</a>
-					<a href="#" class="partners-item" target="_blank">
-						<img src="img/partner-img2.png" alt="">
-					</a>
-					<a href="#" class="partners-item" target="_blank">
-						<img src="img/partner-img3.png" alt="">
-					</a>
-					<a href="#" class="partners-item" target="_blank">
-						<img src="img/partner-img4.png" alt="">
-					</a>
-					<a href="#" class="partners-item" target="_blank">
-						<img src="img/partner-img5.png" alt="">
-					</a>
-					<a href="#" class="partners-item" target="_blank">
-						<img src="img/partner-img6.png" alt="">
-					</a>
-					<a href="#" class="partners-item" target="_blank">
-						<img src="img/partner-img7.png" alt="">
-					</a>
-					<a href="#" class="partners-item" target="_blank">
-						<img src="img/partner-img8.png" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="contacts" id="contacts">
-		<div class="container">
-			<div class="contacts__inner">
-				<div class="contacts__title">Наши контакты</div>
-				<div class="contacts__desc-area">
-					<div class="contacts__desc">
-						<div class="contacts__local">
-							<div class="contacts__local-icon">
-								<img src="img/contacts-local.svg" alt="">
-							</div>
-							<div class="contacts__local-text">г. Ташкент, Чиланзар 7 квартал, 23 дом</div>
-						</div>
-						<a href="tel:+998908270505" class="contacts__phone">
-							<div class="contacts__phone-icon">
-								<img src="img/contacts-phone.svg" alt="">
-							</div>
-							<div class="contacts__phone-text">+998 90 827-05-05</div>
-						</a>
-						<div class="contacts__form-wrap">
-							<form action="">
-								<div class="contacts__form-title">Остались вопросы?</div>
-								<div class="contacts__form-subtitle">
-									Оставьте заявку и получите бесплатную консультацию нашего специалиста по ценам, характеристикам, срокам и вариантам поставки в ваш регион.
-								</div>
-								<div class="contacts__form-main">
-									<input type="text" placeholder="Ваше имя" required>
-									<input type="tel" placeholder="Номер телефона" required>
-									<textarea name="" id="" cols="30" rows="10" placeholder="Текст сообщения"></textarea>
-								</div>
-								<button type="submit" class="contacts__form-btn main-btn">Оставить заявку</button>
-							</form>
-						</div>
-					</div>
-					<div class="contacts__map-wrap">
-						<iframe src="https://yandex.com/map-widget/v1/?um=constructor%3Aae9854c526148c6f44208204933c6815f05d45d0c76714c9d5125244c20f7ef4&amp;source=constructor" width="950" height="657" frameborder="0"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                
 
-	<footer class="footer">
-		<div class="container">
-			<div class="footer__inner">
-				<div class="footer__copyright">“TECHNOTYRE” © 2023</div>
-				<div class="footer__company">
-					<span class="footer__company-title">Создание сайтов:</span>
-					<a href="https://web-lite.ru/" class="footer__company-body" target="_blank">Студия “WebLite”</a>
-				</div>
-			</div>
-		</div>
-	</footer>
+                <div id="questions-container" class="qst-container" style="">
+            <h3>Вопросы и варианты ответов</h3>
+            <div class="questions-list">
+    <div class="question-item" data-index="0">
+        <div class="question-header">
+            <span class="number">Вопрос 1</span>
+            <button type="button" class="btn-delete question-delete">×</button>
+        </div>
+        <div class="form-group">
+            <label>Текст вопроса <span class="required">*</span></label>
+            <textarea name="questions[0][text]" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Изображение к вопросу</label>
+            <div class="image-upload" data-type="question">
+                <div class="upload-zone">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="30px" height="30px" viewBox="0 0 32 32" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#3366cc"><path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"></path></g></g></svg> Перетащите изображение сюда или кликните для выбора</span>
+                </div>
+                <div class="preview"></div>
+                <input type="file" accept="image/*" class="file-input hidden">
+                <input type="hidden" name="questions[0][image]" class="image-input">
+            </div>
+        </div>
+        <div class="answers-container">
+            <div class="answers-type">
+                <label>
+                    <input type="radio" name="questions[0][answer_type]" value="text" checked="">
+                    Текстовые ответы
+                </label>
+                <label>
+                    <input type="radio" name="questions[0][answer_type]" value="image">
+                    Ответы картинками
+                </label>
+            </div>
+            <div class="answers-list">
+    <div class="answer-item" data-question-index="0" data-index="0">
+        <div class="answer-variant">
+            <div class="answer-text hidden">
+                <input type="text" name="questions[0][answers][0][text]" class="form-control" placeholder="Вариант ответа">
+            </div>
+            <div class="answer-image">
+                <div class="image-upload" data-type="answer">
+                    <div class="upload-zone">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="30px" height="30px" viewBox="0 0 32 32" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#3366cc"><path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"></path></g></g></svg> Перетащите изображение сюда или кликните для выбора</span>
+                    </div>
+                    <div class="preview"></div>
+                    <input type="file" accept="image/*" class="file-input hidden">
+                    <input type="hidden" name="questions[0][answers][0][image]" class="image-input">
+                </div>
+            </div>
+        </div>
 
-	<!-- popup form -->
-	<div class="popup-form-wrap js-popup-wrap">
-		<div class="popup-bg popup-btn"></div>
-		<div class="popup-form__inner">
-			<div class="popup-form__close popup-btn"></div>
-			<form action="" class="popup-form">
-				<div class="popup-form__title">Оставить заявку</div>
-				<div class="popup-form__main">
-					<input type="text" placeholder="Ваше имя" required>
-					<input type="email" placeholder="Номер телефона" required>
-					<textarea name="" id="" cols="30" rows="10" placeholder="Текст сообщения"></textarea>
-				</div>
-				<div class="popup-form__btn-wrap">
-					<button class="popup-form__btn main-btn" type="submit">Оставить заявку</button>
-				</div>
-			</form>
-		</div>
-	</div>
+        <div class="answer-scoring">
+                <label class="correct-answer">
+                    <input type="checkbox" name="questions[0][answers][0][is_correct]">
+                    Правильный ответ
+                </label>
+            </div>
 
-	<!-- popup menu -->
+        <button type="button" class="btn-delete answer-delete">×</button>
+    </div>
 
-	<div class="popup-menu">
-		<div class="popup-bg popup-menu-btn"></div>
-		<div class="popup-in">
-			<div class="popup-close popup-menu-btn"></div>
-			<ul class="header__lang-bar">
-				<li class="header__lang-item">
-					<a href="" class="header__lang-link">
-						<img src="img/header-lang-ru.svg" alt="">
-					</a>
-				</li>
-				<li class="header__lang-item">
-					<a href="" class="header__lang-link">
-						<img src="img/header-lang-uz.svg" alt="">
-					</a>
-				</li>
-			</ul>
-			<div class="header__contacts">
-				<div class="header__contacts-local">
-					<div class="header__local-icon">
-						<img src="img/header-local.svg" alt="">
-					</div>
-					<div class="header__local-text">г. Ташкент, Чиланзар 7 квартал, 23 дом</div>
-				</div>
-				<a href="tel:+998908270505" class="header__contacts-phone">
-					<div class="header__phone-icon">
-						<img src="img/header-phone.svg" alt="">
-					</div>
-					<div class="header__phone-text">+998 90 827-05-05</div>
-				</a>
-			</div>
-			<ul class="navigation__list">
-				<li>
-					<a href="#product" class="popup-menu__link js-menu-link">
-						Шины
-					</a>
-				</li>
-				<li>
-					<a href="#plus" class="popup-menu__link js-menu-link">
-						Преимущества
-					</a>
-				</li>
-				<li>
-					<a href="#about-us" class="popup-menu__link js-menu-link">
-						О нас
-					</a>
-				</li>
-				<li>
-					<a href="#partners" class="popup-menu__link js-menu-link">
-						Партнёры
-					</a>
-				</li>
-				<li>
-					<a href="#contacts" class="popup-menu__link js-menu-link">
-						Контакты
-					</a>
-				</li>
-			</ul>			
-		</div>
-	</div>
+    <div class="answer-item" data-question-index="0" data-index="1">
+        <div class="answer-variant">
+            <div class="answer-text hidden">
+                <input type="text" name="questions[0][answers][1][text]" class="form-control" placeholder="Вариант ответа">
+            </div>
+            <div class="answer-image">
+                <div class="image-upload" data-type="answer">
+                    <div class="upload-zone">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="30px" height="30px" viewBox="0 0 32 32" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#3366cc"><path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"></path></g></g></svg> Перетащите изображение сюда или кликните для выбора</span>
+                    </div>
+                    <div class="preview"></div>
+                    <input type="file" accept="image/*" class="file-input hidden">
+                    <input type="hidden" name="questions[0][answers][1][image]" class="image-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-scoring">
+                <label class="correct-answer">
+                    <input type="checkbox" name="questions[0][answers][1][is_correct]">
+                    Правильный ответ
+                </label>
+            </div>
+
+        <button type="button" class="btn-delete answer-delete">×</button>
+    </div>
+</div>
+            <button type="button" class="btn btn-add-answer">Добавить ещё вариант ответа</button>
+        </div>
+    </div>
+</div>
+            <button type="button" class="btn btn-add-question">Добавить следующий вопрос</button>
+        </div><div id="results-container" class="rstsel">
+            <h3>Варианты результатов теста</h3>
+
+                        <div class="personality-types-section" style="display: none;">
+                <div class="personality-types-header">
+                    <h4>Типы личности</h4>
+                    <p class="hint">Добавьте минимум два типа личности. Для каждого варианта ответа вы сможете указать, насколько он соответствует каждому типу.</p>
+                </div>
+                <div class="personality-types-list"></div>
+                <button type="button" class="btn btn-add-personality-type">
+                    Добавить тип личности
+                </button>
+            </div>
+
+                        <div class="standard-results-section">
+                <div class="result-type-selector">
+                    <label>
+                        <input type="radio" name="result_type" value="percentage" checked="">
+                        Процентный (0-30%, 31-70%, 71-100%)
+                    </label>
+                    <label>
+                        <input type="radio" name="result_type" value="interval">
+                        Интервальный (по количеству правильных ответов)
+                    </label>
+                    <label>
+                        <input type="radio" name="result_type" value="exact">
+                        Точный (все верно/есть ошибки)
+                    </label>
+                    <label>
+                        <input type="radio" name="result_type" value="random">
+                        Случайный
+                    </label>
+                </div>
+                <div class="results-list">
+    <div class="result-item" data-index="0">
+        <div class="result-header">
+            <span class="title">0-30% правильных ответов</span>
+            <button type="button" class="btn-delete">×</button>
+        </div>
+        <div class="form-group">
+            <label>Текст результата <span class="required">*</span></label>
+            <textarea name="results[0][text]" class="form-control"></textarea>
+            <div class="hint">Это психологически важный момент. У пользователя должно возникнуть желание поделиться тестом</div>
+        </div>
+        <div class="form-group">
+            <label>Картинка результата</label>
+            <div class="image-upload" data-type="result">
+                <div class="upload-zone">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="30px" height="30px" viewBox="0 0 32 32" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#3366cc"><path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"></path></g></g></svg> Перетащите изображение сюда или кликните для выбора</span>
+                </div>
+                <div class="preview"></div>
+                <input type="file" accept="image/*" class="file-input hidden">
+                <input type="hidden" name="results[0][image]" class="image-input">
+            </div>
+        </div>
+        <input type="hidden" name="results[0][min_value]" value="0">
+        <input type="hidden" name="results[0][max_value]" value="30">
+    </div>
+
+    <div class="result-item" data-index="1">
+        <div class="result-header">
+            <span class="title">31-70% правильных ответов</span>
+            <button type="button" class="btn-delete">×</button>
+        </div>
+        <div class="form-group">
+            <label>Текст результата <span class="required">*</span></label>
+            <textarea name="results[1][text]" class="form-control"></textarea>
+            <div class="hint">Это психологически важный момент. У пользователя должно возникнуть желание поделиться тестом</div>
+        </div>
+        <div class="form-group">
+            <label>Картинка результата</label>
+            <div class="image-upload" data-type="result">
+                <div class="upload-zone">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="30px" height="30px" viewBox="0 0 32 32" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#3366cc"><path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"></path></g></g></svg> Перетащите изображение сюда или кликните для выбора</span>
+                </div>
+                <div class="preview"></div>
+                <input type="file" accept="image/*" class="file-input hidden">
+                <input type="hidden" name="results[1][image]" class="image-input">
+            </div>
+        </div>
+        <input type="hidden" name="results[1][min_value]" value="31">
+        <input type="hidden" name="results[1][max_value]" value="70">
+    </div>
+
+    <div class="result-item" data-index="2">
+        <div class="result-header">
+            <span class="title">71-100% правильных ответов</span>
+            <button type="button" class="btn-delete">×</button>
+        </div>
+        <div class="form-group">
+            <label>Текст результата <span class="required">*</span></label>
+            <textarea name="results[2][text]" class="form-control"></textarea>
+            <div class="hint">Это психологически важный момент. У пользователя должно возникнуть желание поделиться тестом</div>
+        </div>
+        <div class="form-group">
+            <label>Картинка результата</label>
+            <div class="image-upload" data-type="result">
+                <div class="upload-zone">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="30px" height="30px" viewBox="0 0 32 32" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#3366cc"><path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"></path></g></g></svg> Перетащите изображение сюда или кликните для выбора</span>
+                </div>
+                <div class="preview"></div>
+                <input type="file" accept="image/*" class="file-input hidden">
+                <input type="hidden" name="results[2][image]" class="image-input">
+            </div>
+        </div>
+        <input type="hidden" name="results[2][min_value]" value="71">
+        <input type="hidden" name="results[2][max_value]" value="100">
+    </div>
+</div><button type="button" class="btn btn-add-random-result" style="display: none;">Добавить еще вариант результата</button>
+            </div>
+        </div>
+
+                <div class="form-group">
+            <h3>Настройки теста</h3>
+            <label>
+                <input type="checkbox" name="allow_comments" checked="">
+                Разрешить комментарии
+            </label>
+            <label>
+                <input type="checkbox" name="show_correct_answers">
+                В конце теста вывести правильные ответы
+            </label>
+            <label>
+                <input type="checkbox" name="show_percentage">
+                Показывать процент правильных ответов
+            </label>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Сохранить тест и добавить в Сборник</button>
+        </div>
+    </form>
+
+        <div id="success-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <p>Ваш тест успешно сохранен и отправлен на модерацию. После проверки он появится на сайте.</p>
+        </div>
+    </div>
+</div>
+
+<script type="text/template" id="question-template">
+    <div class="question-item" data-index="%index%">
+        <div class="question-header">
+            <span class="number">Вопрос %number%</span>
+            <button type="button" class="btn-delete question-delete">×</button>
+        </div>
+        <div class="form-group">
+            <label>Текст вопроса <span class="required">*</span></label>
+            <textarea name="questions[%index%][text]" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Изображение к вопросу</label>
+            <div class="image-upload" data-type="question">
+                <div class="upload-zone">
+                    <span>&#10133; Перетащите изображение сюда или кликните для выбора</span>
+                </div>
+                <div class="preview"></div>
+                <input type="file" accept="image/*" class="file-input hidden">
+                <input type="hidden" name="questions[%index%][image]" class="image-input">
+            </div>
+        </div>
+        <div class="answers-container">
+            <div class="answers-type">
+                <label>
+                    <input type="radio" name="questions[%index%][answer_type]" value="text" checked>
+                    Текстовые ответы
+                </label>
+                <label>
+                    <input type="radio" name="questions[%index%][answer_type]" value="image">
+                    Ответы картинками
+                </label>
+            </div>
+            <div class="answers-list"></div>
+            <button type="button" class="btn btn-add-answer">Добавить ещё вариант ответа</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="answer-template">
+    <div class="answer-item" data-question-index="%qindex%" data-index="%index%">
+        <div class="answer-variant">
+            <div class="answer-text">
+                <input type="text" name="questions[%qindex%][answers][%index%][text]" class="form-control" placeholder="Вариант ответа">
+            </div>
+            <div class="answer-image hidden">
+                <div class="image-upload" data-type="answer">
+                    <div class="upload-zone">
+                        <span>&#10133; Перетащите изображение сюда или кликните для выбора</span>
+                    </div>
+                    <div class="preview"></div>
+                    <input type="file" accept="image/*" class="file-input hidden">
+                    <input type="hidden" name="questions[%qindex%][answers][%index%][image]" class="image-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-scoring">
+            <label class="correct-answer">
+                <input type="checkbox" name="questions[%qindex%][answers][%index%][is_correct]">
+                Правильный ответ
+            </label>
+        </div>
+
+        <button type="button" class="btn-delete answer-delete">×</button>
+    </div>
+</script>
+
+<script type="text/template" id="personality-weights-template">
+    <div class="personality-weights">
+        <div class="weight-notice">
+            <small class="hint">* Хотя бы один из весов должен быть больше 0</small>
+        </div>
+        <div class="weights-list">
+            %weights_content%
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="weight-item-template">
+    <div class="weight-item">
+        <label>Насколько этот ответ соответствует типу "%type_name%"?</label>
+        <div class="weight-control">
+            <input type="range"
+                   name="questions[%qindex%][answers][%index%][weights][%type_id%]"
+                   class="weight-range"
+                   min="0"
+                   max="10"
+                   value="%weight_value%"
+                   data-type-id="%type_id%">
+            <input type="number"
+                   class="weight-value"
+                   value="%weight_value%"
+                   min="0"
+                   max="10"
+                   step="1"
+                   data-type-id="%type_id%">
+        </div>
+    </div>
+</script>
+
+
+<script type="text/template" id="personality-type-template">
+    <div class="personality-type-item" data-type-index="%index%">
+        <div class="type-header">
+            <div class="type-number">Тип личности №%number%</div>
+            <button type="button" class="btn-delete" title="Удалить тип личности">×</button>
+        </div>
+        <div class="type-content">
+            <div class="form-group">
+                <label>Название типа <span class="required">*</span></label>
+                <input type="text"
+                       name="personality_types[%index%][name]"
+                       class="form-control"
+                       placeholder="Например: Интроверт"
+                       required>
+            </div>
+            <div class="form-group">
+                <label>Описание типа <span class="required">*</span></label>
+                <textarea name="personality_types[%index%][description]"
+                          class="form-control"
+                          placeholder="Опишите характеристики этого типа личности..."
+                          required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Изображение (необязательно)</label>
+                <div class="image-upload" data-type="personality_type">
+                    <div class="upload-zone">
+                        <span>&#10133; Перетащите изображение сюда или кликните для выбора</span>
+                    </div>
+                    <div class="preview"></div>
+                    <input type="file" accept="image/*" class="file-input hidden">
+                    <input type="hidden" name="personality_types[%index%][image]" class="image-input">
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="result-template">
+    <div class="result-item" data-index="%index%">
+        <div class="result-header">
+            <span class="title">%title%</span>
+            <button type="button" class="btn-delete">×</button>
+        </div>
+        <div class="form-group">
+            <label>Текст результата <span class="required">*</span></label>
+            <textarea name="results[%index%][text]" class="form-control"></textarea>
+            <div class="hint">Это психологически важный момент. У пользователя должно возникнуть желание поделиться тестом</div>
+        </div>
+        <div class="form-group">
+            <label>Картинка результата</label>
+            <div class="image-upload" data-type="result">
+                <div class="upload-zone">
+                    <span>&#10133; Перетащите изображение сюда или кликните для выбора</span>
+                </div>
+                <div class="preview"></div>
+                <input type="file" accept="image/*" class="file-input hidden">
+                <input type="hidden" name="results[%index%][image]" class="image-input">
+            </div>
+        </div>
+        <input type="hidden" name="results[%index%][min_value]" value="%min_value%">
+        <input type="hidden" name="results[%index%][max_value]" value="%max_value%">
+    </div>
+</script>
+
+<script type="text/template" id="interval-result-template">
+    <div class="result-item" data-index="%index%">
+        <div class="result-header">
+            <span class="title">%title%</span>
+            <button type="button" class="btn-delete" style="display: none;">×</button>
+        </div>
+        <div class="form-group">
+            <label>Интервал правильных ответов (количество вопросов)</label>
+            <div class="interval-inputs">
+                <div class="input-group">
+                    <label>От:</label>
+                    <input type="number"
+                           class="form-control interval-min"
+                           value="%min_value%"
+                           min="1"
+                           max="%max_possible%"
+                           %min_readonly%>
+                </div>
+                <div class="input-group">
+                    <label>До:</label>
+                    <input type="number"
+                           class="form-control interval-max"
+                           value="%max_value%"
+                           min="1"
+                           max="%max_possible%">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Текст результата <span class="required">*</span></label>
+            <textarea name="results[%index%][text]" class="form-control"></textarea>
+            <div class="hint">Опишите результат теста для указанного количества правильно отвеченных вопросов</div>
+        </div>
+        <div class="form-group">
+            <label>Картинка результата</label>
+            <div class="image-upload" data-type="result">
+                <div class="upload-zone">
+                    <span>&#10133; Перетащите изображение сюда или кликните для выбора</span>
+                </div>
+                <div class="preview"></div>
+                <input type="file" accept="image/*" class="file-input hidden">
+                <input type="hidden" name="results[%index%][image]" class="image-input">
+            </div>
+        </div>
+        <input type="hidden" name="results[%index%][min_value]" value="%min_value%">
+        <input type="hidden" name="results[%index%][max_value]" value="%max_value%">
+    </div>
+</script></div>
+
+
+<div style="bottom: 0; padding: 30px 0; background: #3366CC;">
+    <div class="container" style="color:#FFF;">
+        <div style="width:67%; margin-left: 9px; font-size: 15px; float: left; line-height: 19px;">Sborniktestov.ru 2024 | Вопросы и отзывы: sborniktestovru@yandex.ru<br>Все Торговые Марки принадлежат их владельцам.</div>
+        <div style="width:30%; float: right;"></div>
+    </div>
+</div>
+<div class="popup-menu"><div class="popup-menu__bg js-close"></div><div class="popup-menu__inner"><div class="popup-menu__close js-close"></div><div class="popup-menu__nav-wrap"><ul class="popup-menu__nav"><li><a href="https://sborniktestov.ru/category/102.html">История и культура</a></li><li><a href="https://sborniktestov.ru/category/3.html">Кулинарные викторины</a></li><li><a href="https://sborniktestov.ru/category/101.html">Логические головоломки</a></li><li><a href="https://sborniktestov.ru/category/105.html">Музыка и кино</a></li><li><a href="https://sborniktestov.ru/category/2.html">На iQ и интеллект</a></li><li><a href="https://sborniktestov.ru/category/1.html">На внимание, концентрацию</a></li><li><a href="https://sborniktestov.ru/category/103.html">Научные факты</a></li><li><a href="https://sborniktestov.ru/category/100.html">Общие знания</a></li><li><a href="https://sborniktestov.ru/category/107.html">Природа и окружающая среда</a></li><li><a href="https://sborniktestov.ru/category/5.html">Разноплановые тесты</a></li><li><a href="https://sborniktestov.ru/category/106.html">Спортивные тесты</a></li><li><a href="https://sborniktestov.ru/category/108.html">Тесты по Географии</a></li><li><a href="https://sborniktestov.ru/category/6.html">Тесты по ПДД</a></li><li><a href="https://sborniktestov.ru/category/4.html">Тесты по психологии</a></li><li><a href="https://sborniktestov.ru/category/104.html">Технологии и IT</a></li></ul></div></div></div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Меню
+    const burger = document.querySelector('.topburger');
+    const menu = document.querySelector('.popup-menu');
+    const closeButtons = document.querySelectorAll('.js-close');
+
+    burger.addEventListener('click', function() {
+        menu.classList.add('opened');
+        document.body.classList.add('noscroll');
+    });
+
+    closeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            menu.classList.remove('opened');
+            document.body.classList.remove('noscroll');
+        });
+    });
+});
+</script>
 
 
 
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-	<script src="js/main.js"></script>
-
-</body>
-</html>
+</body></html>
