@@ -199,7 +199,6 @@ textarea.form-control:active {
     display: flex;
     align-items: center;
     flex-direction: row;
-    align-items: flex-start;
     gap: 15px;
 }
 
