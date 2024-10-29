@@ -1008,6 +1008,25 @@
         .topsearch { flex:1 1 calc(100% - 60px); }
         }
 
+        @media screen and (max-width:480px) {
+                .toplink {
+                        flex: 0 0 45%;
+                        margin: 0;
+                        height: auto;
+                        align-self: flex-start;
+                        width: 46%;
+                }
+                        
+                .toplink-link {
+                        font-size: 14px;
+                        padding: 10px 10px;
+                }
+                        
+                .toplink-inner {
+                        max-width: 100%;
+                }    
+        }
+
         @media screen and (max-width:380px) {
             .toplogo {
                 height: 47px;
